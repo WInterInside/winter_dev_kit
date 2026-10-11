@@ -1,0 +1,20 @@
+{% macro button(label="", icon="", viewBox="0 0 24 24", ariaLabel="", modifier="", disabled=false) %}
+	<button
+		class="button{% if icon %}button--icon{% endif %}{% if modifier %}{{ modifier }}{% endif %}"
+		type="button"
+		{% if ariaLabel %}aria-label="{{ ariaLabel }}"{% endif %}
+		{% if disabled %}disabled{% endif %}
+	>
+		{% if icon %}
+			<svg
+				class="button__icon svg-icon"
+				viewBox="{{ viewBox }}"
+				aria-hidden="true"
+				focusable="false"
+			>
+				<use href="#{{ icon }}" xlink:href="#{{ icon }}"></use>
+			</svg>
+		{% endif %}
+		{% if label %}<span class="button__label">{{ label }}</span>{% endif %}
+	</button>
+{% endmacro %}

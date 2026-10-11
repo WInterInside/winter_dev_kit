@@ -1,0 +1,78 @@
+// fonts
+$font = 'Gilroy', Arial, Helvetica, sans-serif;
+// winter color palette
+$c0-hex = transparent;
+$c1-hex = #e9f0f7; // snow
+$c2-hex = #101820; // night
+$c3-hex = #9bc8e8; // ice blue
+$c4-hex = #d88383; // muted red
+$c5-hex = #91a2b2; // blue grey
+$c6-hex = #dce5ed; // frost
+$c7-hex = #e7edf2; // pale snow
+$c8-hex = #708394; // slate
+$c9-hex = #293845; // deep slate
+$c10-hex = #c5bce8; // soft lilac
+$c11-hex = #8ed5e6; // frozen lake
+$c12-hex = #d5b98a; // warm light
+$c13-hex = #e48a94; // soft rose
+$c14-hex = #aa9be8; // twilight
+$c15-hex = #142330; // dark blue
+$c16-hex = #b7c6d3; // cold grey
+$c17-hex = #17232e; // panel
+$c18-hex = #c4e1f5; // ice hover
+
+// CSS custom properties for runtime theming
+:root
+	--c0: $c0-hex;
+	--c1: $c1-hex;
+	--c2: $c2-hex;
+	--c3: $c3-hex;
+	--c4: $c4-hex;
+	--c5: $c5-hex;
+	--c6: $c6-hex;
+	--c7: $c7-hex;
+	--c8: $c8-hex;
+	--c9: $c9-hex;
+	--c10: $c10-hex;
+	--c11: $c11-hex;
+	--c12: $c12-hex;
+	--c13: $c13-hex;
+	--c14: $c14-hex;
+	--c15: $c15-hex;
+	--c16: $c16-hex;
+	--c17: $c17-hex;
+	--c18: $c18-hex;
+
+// Stylus aliases point to CSS custom properties
+$c0 = var(--c0);
+$c1 = var(--c1);
+$c2 = var(--c2);
+$c3 = var(--c3);
+$c4 = var(--c4);
+$c5 = var(--c5);
+$c6 = var(--c6);
+$c7 = var(--c7);
+$c8 = var(--c8);
+$c9 = var(--c9);
+$c10 = var(--c10);
+$c11 = var(--c11);
+$c12 = var(--c12);
+$c13 = var(--c13);
+$c14 = var(--c14);
+$c15 = var(--c15);
+$c16 = var(--c16);
+$c17 = var(--c17);
+$c18 = var(--c18);
+$duration = 0.3s;
+$spacer = 10px;
+$easeIn = cubic-bezier(0, 0, 0.2, 1);
+$easeOut = cubic-bezier(0.4, 0, 1, 1);
+$easeInOut = cubic-bezier(0.4, 0, 0.2, 1);
+$desktop = 'only screen and (min-width: 1024px)';
+$xlarge = 'only screen and (min-width: 1441px)';
+$large = 'only screen and (max-width: 1440px)';
+$normal = 'only screen and (max-width: 1365px)';
+$medium = 'only screen and (max-width: 1199px)';
+$small = 'only screen and (max-width: 1023px)';
+$xsmall = 'only screen and (max-width: 767px)';
+$xxsmall = 'only screen and (max-width: 374px)';

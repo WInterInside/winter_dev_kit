@@ -1,0 +1,45 @@
+.button
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	padding: 0 16px;
+	color: #e9f0f7;
+	color: $c1;
+	background-color: #17232e;
+	background-color: $c17;
+	border: 1px solid #708394;
+	border: 1px solid $c8;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: color $duration, border-color $duration, background-color $duration;
+
+	&:not(:disabled):hover
+		color: #9bc8e8;
+		color: $c3;
+		border-color: #9bc8e8;
+		border-color: $c3;
+
+	&:focus-visible
+		outline: 2px solid #9bc8e8;
+		outline: 2px solid $c3;
+		outline-offset: 2px;
+
+	&:disabled
+		cursor: default;
+		opacity: 0.72;
+
+	&--icon
+		width: 44px;
+		padding: 0;
+
+	&__icon
+		width: 20px;
+		height: 20px;
+
+	&__label
+		line-height: 20px;

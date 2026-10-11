@@ -1,0 +1,55 @@
+.footer
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	padding: 16px 0 24px;
+	border-top: 1px solid rgba(155, 200, 232, 0.18);
+
+	&__copyright
+		color: #708394;
+		color: $c8;
+		font-size: 12px;
+		letter-spacing: 0.5px;
+		line-height: 18px;
+
+	&__links
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+
+	&__link
+		margin-left: 18px;
+		color: #91a2b2;
+		color: $c5;
+		font-size: 13px;
+		line-height: 20px;
+		transition: color $duration;
+
+		&:hover
+			color: #9bc8e8;
+			color: $c3;
+
+@media $xsmall
+	.footer
+		-ms-flex-align: center;
+		align-items: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		text-align: center;
+
+		&__links
+			-ms-flex-pack: center;
+			justify-content: center;
+			width: 100%;
+			margin-top: 8px;
+
+		&__link
+			margin: 0 9px;

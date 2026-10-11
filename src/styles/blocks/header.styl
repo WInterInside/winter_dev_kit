@@ -1,0 +1,31 @@
+.header
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: center;
+	align-items: center;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	min-height: 56px;
+	border-bottom: 1px solid rgba(155, 200, 232, 0.18);
+
+	&__brand
+		color: #91a2b2;
+		color: $c5;
+		font-size: 13px;
+		font-weight: 500;
+		letter-spacing: 0.5px;
+		line-height: 20px;
+		text-decoration: none;
+		transition: color $duration;
+
+		&:hover
+			color: #9bc8e8;
+			color: $c3;
+
+	&__navigation
+		display: -ms-flexbox;
+		display: flex;
+
+@media $xsmall
+	.header
+		min-height: 48px;

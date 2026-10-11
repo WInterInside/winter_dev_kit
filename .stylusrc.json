@@ -1,0 +1,12 @@
+{
+	"insertColons": true,
+	"insertSemicolons": true,
+	"insertBraces": false,
+	"insertNewLineAroundImports": true,
+	"insertNewLineAroundBlocks": true,
+	"insertSpaceAfterComma": true,
+	"insertSpaceInsideParenthesis": false,
+	"quoteChar": "'",
+	"tabStopChar": "\t",
+	"newLineChar": "\n"
+}

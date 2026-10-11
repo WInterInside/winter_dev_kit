@@ -1,0 +1,68 @@
+.hero
+	position: relative;
+	display: flex;
+	-ms-flex-align: end;
+	align-items: flex-end;
+	min-height: 380px;
+	overflow: hidden;
+	padding: 56px;
+	background-color: #17232e;
+	background-color: $c17;
+	background-image: linear-gradient(90deg, rgba(10, 18, 25, 0.9) 0%, rgba(10, 18, 25, 0.64) 46%, rgba(10, 18, 25, 0.08) 100%), linear-gradient(0deg, rgba(10, 18, 25, 0.58) 0%, transparent 55%), url('../assets/social-banner.png');
+	background-position: center 52%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 1px solid rgba(155, 200, 232, 0.18);
+	border-radius: 6px;
+
+	&__content
+		width: 100%;
+
+	&__eyebrow
+		margin: 0 0 12px;
+		color: #9bc8e8;
+		color: $c3;
+		font-size: 12px;
+		font-weight: 600;
+		letter-spacing: 2px;
+		line-height: 16px;
+		text-transform: uppercase;
+
+	&__title
+		margin: 0;
+		font-size: 44px;
+		font-weight: 600;
+		letter-spacing: -1px;
+		line-height: 50px;
+
+	&__description
+		max-width: 640px;
+		margin: 16px 0 0;
+		color: rgba(233, 240, 247, 0.9);
+		font-size: 18px;
+		line-height: 29px;
+
+@media $medium
+	.hero
+		min-height: 340px;
+		padding: 40px;
+
+		&__title
+			font-size: 38px;
+			line-height: 44px;
+
+@media $xsmall
+	.hero
+		min-height: 320px;
+		padding: 24px;
+		background-image: linear-gradient(0deg, rgba(10, 18, 25, 0.94) 0%, rgba(10, 18, 25, 0.16) 100%), url('../assets/social-banner.png');
+		background-position: center;
+
+		&__title
+			font-size: 30px;
+			letter-spacing: -1px;
+			line-height: 36px;
+
+		&__description
+			font-size: 16px;
+			line-height: 24px;

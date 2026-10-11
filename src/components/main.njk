@@ -1,0 +1,19 @@
+<main class="main">
+	<section class="hero" aria-labelledby="hero-title">
+		<div class="hero__content">
+			<h1 class="hero__title" id="hero-title">{{ pageTitle }}</h1>
+			<p class="hero__description">{{ pageDescription }}</p>
+		</div>
+	</section>
+
+	<section class="feature-list" aria-labelledby="feature-list-title">
+		<h2 class="feature-list__heading" id="feature-list-title">Возможности стартового набора</h2>
+		<ul class="feature-list__items">
+			{% for item in items %}
+				{% include "components/feature-card.njk" %}
+			{% else %}
+				<li class="feature-list__empty">Добавьте описания возможностей в src/data.json.</li>
+			{% endfor %}
+		</ul>
+	</section>
+</main>

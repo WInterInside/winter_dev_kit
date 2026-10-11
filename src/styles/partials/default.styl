@@ -1,0 +1,145 @@
+*
+	box-sizing: border-box;
+
+	&::selection
+		color: #e9f0f7;
+		color: $c1;
+		background-color: #293845;
+		background-color: $c9;
+
+html, body
+	margin: 0;
+	padding: 0;
+
+body
+	font-family: $font;
+	font-weight: 400;
+	color: #e9f0f7;
+	color: $c1;
+	font-size: 16px;
+	line-height: 26px;
+	background-color: #101820;
+	background-color: $c2;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-ms-overflow-style: none;
+
+	&.is-overflow
+		overflow: hidden;
+
+	&.is-fake-scroll
+		&::after
+			position: fixed;
+			content: '';
+			display: block;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			overflow-y: scroll;
+			z-index: 8;
+
+a
+	color: #9bc8e8;
+	color: $c3;
+	text-decoration: none;
+	transition: color $duration;
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible
+	outline: 2px solid #9bc8e8;
+	outline: 2px solid $c3;
+	outline-offset: 2px;
+
+ul, ol
+	list-style-type: none;
+	padding-left: 0;
+	margin: 0;
+
+h1, h2, h3, h4
+	font-family: $font;
+	font-weight: 600;
+	line-height: 32px;
+	margin: 16px 0;
+
+h1, h2
+	font-size: 30px;
+
+h3
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 28px;
+	margin: 14px 0;
+
+p
+	margin: 16px 0;
+
+input, textarea
+	display: block;
+	width: 100%;
+	font-family: $font;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	height: 54px;
+	padding: 16px 0;
+	color: #e9f0f7;
+	color: $c1;
+	background-color: #17232e;
+	background-color: $c17;
+	border: none;
+	border-bottom: 1px solid #293845;
+	border-bottom: 1px solid $c9;
+	border-radius: 0;
+	text-overflow: ellipsis;
+	box-shadow: none !important;
+	transition: border-color $duration, color $duration;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	placeholder($c5);
+
+textarea
+	height: 54px;
+	resize: none;
+	overflow: hidden;
+
+label
+	display: inline-block;
+	font-family: $font;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+	color: #e9f0f7;
+	color: $c1;
+
+button
+	font-family: $font;
+	color: inherit;
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	user-select: none;
+
+img
+	max-width: 100%;
+
+.svg-icon
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	fill: currentColor;
+	vertical-align: middle;
+
+.svg-sprite
+	display: none;
+
+a, input, label, button
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-tap-highlight-color: transparent;
+
+@media $desktop
+	a
+		&:hover
+			color: darken($c3-hex, 15%);
