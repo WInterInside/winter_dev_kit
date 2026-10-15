@@ -1,12 +1,13 @@
-.feature-list
-	&__heading
+.feature-list {
+	&__heading {
 		margin: 0 0 16px;
 		font-size: 20px;
 		font-weight: 500;
 		letter-spacing: -0.3px;
 		line-height: 26px;
+	}
 
-	&__items
+	&__items {
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
@@ -14,8 +15,9 @@
 		margin: -7px;
 		padding: 0;
 		list-style: none;
+	}
 
-	&__item
+	&__item {
 		-ms-flex: 1 1 280px;
 		flex: 1 1 280px;
 		margin: 7px;
@@ -23,15 +25,17 @@
 		background-color: rgba(23, 35, 46, 0.72);
 		border: 1px solid rgba(155, 200, 232, 0.15);
 		border-radius: 6px;
+	}
 
-	&__item-heading
+	&__item-heading {
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-align: center;
 		align-items: center;
 		margin-bottom: 8px;
+	}
 
-	&__item-icon
+	&__item-icon {
 		-ms-flex: 0 0 32px;
 		flex: 0 0 32px;
 		width: 32px;
@@ -39,25 +43,29 @@
 		margin-right: 12px;
 		color: #9bc8e8;
 		color: $c3;
+	}
 
-	&__item-example
+	&__item-example {
 		margin-top: 16px;
+	}
 
-	&__item-title
+	&__item-title {
 		margin: 0;
 		color: #9bc8e8;
 		color: $c3;
 		font-size: 16px;
 		font-weight: 600;
 		line-height: 22px;
+	}
 
-	&__item-description
+	&__item-description {
 		margin: 0;
 		color: #91a2b2;
 		color: $c5;
 		line-height: 25px;
+	}
 
-	&__empty
+	&__empty {
 		-ms-flex: 1 1 100%;
 		flex: 1 1 100%;
 		margin: 7px;
@@ -67,8 +75,13 @@
 		border: 1px dashed #708394;
 		border: 1px dashed $c8;
 		border-radius: 6px;
+	}
+}
 
-@media $xsmall
-	.feature-list
-		&__item
+@media $xsmall {
+	.feature-list {
+		&__item {
 			padding: 16px;
+		}
+	}
+}

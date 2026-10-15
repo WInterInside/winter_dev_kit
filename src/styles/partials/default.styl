@@ -1,17 +1,20 @@
-*
+* {
 	box-sizing: border-box;
 
-	&::selection
+	&::selection {
 		color: #e9f0f7;
 		color: $c1;
 		background-color: #293845;
 		background-color: $c9;
+	}
+}
 
-html, body
+html, body {
 	margin: 0;
 	padding: 0;
+}
 
-body
+body {
 	font-family: $font;
 	font-weight: 400;
 	color: #e9f0f7;
@@ -24,11 +27,12 @@ body
 	-webkit-font-smoothing: antialiased;
 	-ms-overflow-style: none;
 
-	&.is-overflow
+	&.is-overflow {
 		overflow: hidden;
+	}
 
-	&.is-fake-scroll
-		&::after
+	&.is-fake-scroll {
+		&::after {
 			position: fixed;
 			content: '';
 			display: block;
@@ -38,42 +42,52 @@ body
 			height: 100%;
 			overflow-y: scroll;
 			z-index: 8;
+		}
+	}
+}
 
-a
+a {
 	color: #9bc8e8;
 	color: $c3;
 	text-decoration: none;
 	transition: color $duration;
+}
 
-a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
 	outline: 2px solid #9bc8e8;
 	outline: 2px solid $c3;
 	outline-offset: 2px;
+}
 
-ul, ol
+ul, ol {
 	list-style-type: none;
 	padding-left: 0;
 	margin: 0;
+}
 
-h1, h2, h3, h4
+h1, h2, h3, h4 {
 	font-family: $font;
 	font-weight: 600;
 	line-height: 32px;
 	margin: 16px 0;
+}
 
-h1, h2
+h1, h2 {
 	font-size: 30px;
+}
 
-h3
+h3 {
 	font-size: 20px;
 	font-weight: 500;
 	line-height: 28px;
 	margin: 14px 0;
+}
 
-p
+p {
 	margin: 16px 0;
+}
 
-input, textarea
+input, textarea {
 	display: block;
 	width: 100%;
 	font-family: $font;
@@ -97,13 +111,15 @@ input, textarea
 	-moz-appearance: none;
 	appearance: none;
 	placeholder($c5);
+}
 
-textarea
+textarea {
 	height: 54px;
 	resize: none;
 	overflow: hidden;
+}
 
-label
+label {
 	display: inline-block;
 	font-family: $font;
 	font-weight: 400;
@@ -111,35 +127,44 @@ label
 	line-height: 24px;
 	color: #e9f0f7;
 	color: $c1;
+}
 
-button
+button {
 	font-family: $font;
 	color: inherit;
 	background-color: transparent;
 	padding: 0;
 	border: none;
 	user-select: none;
+}
 
-img
+img {
 	max-width: 100%;
+}
 
-.svg-icon
+.svg-icon {
 	display: inline-block;
 	width: 16px;
 	height: 16px;
 	fill: currentColor;
 	vertical-align: middle;
+}
 
-.svg-sprite
+.svg-sprite {
 	display: none;
+}
 
-a, input, label, button
+a, input, label, button {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	backface-visibility: hidden;
 	-webkit-tap-highlight-color: transparent;
+}
 
-@media $desktop
-	a
-		&:hover
+@media $desktop {
+	a {
+		&:hover {
 			color: darken($c3-hex, 15%);
+		}
+	}
+}

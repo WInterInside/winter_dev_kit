@@ -1,28 +1,34 @@
 // grid
 $grid-gap = 12px;
 
-grid-container()
+grid-container() {
 	width: 100%;
 	max-width: 1520px;
 	margin: 0 auto;
 	padding: 0 $spacer * 4;
 
-	@media $medium
+	@media $medium {
 		padding: 0 $spacer * 2;
+	}
+}
 
-grid-row()
+grid-row() {
 	display: flex;
 	flex-flow: row wrap;
 	margin-left: -($grid-gap);
 	margin-right: -($grid-gap);
+}
 
-grid-col(x = 12, y = 12)
+grid-col(x = 12, y = 12) {
 	width: (x / y) * 100%;
 	padding-left: $grid-gap;
 	padding-right: $grid-gap;
+}
 
-grid-offset-left(x = 0, y = 12)
+grid-offset-left(x = 0, y = 12) {
 	margin-left: (x / y) * 100%;
+}
 
-grid-offset-right(x = 0, y = 12)
+grid-offset-right(x = 0, y = 12) {
 	margin-right: (x / y) * 100%;
+}

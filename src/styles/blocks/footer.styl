@@ -1,4 +1,4 @@
-.footer
+.footer {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-align: center;
@@ -10,20 +10,22 @@
 	padding: 16px 0 24px;
 	border-top: 1px solid rgba(155, 200, 232, 0.18);
 
-	&__copyright
+	&__copyright {
 		color: #708394;
 		color: $c8;
 		font-size: 12px;
 		letter-spacing: 0.5px;
 		line-height: 18px;
+	}
 
-	&__links
+	&__links {
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
 		flex-wrap: wrap;
+	}
 
-	&__link
+	&__link {
 		margin-left: 18px;
 		color: #91a2b2;
 		color: $c5;
@@ -31,12 +33,15 @@
 		line-height: 20px;
 		transition: color $duration;
 
-		&:hover
+		&:hover {
 			color: #9bc8e8;
 			color: $c3;
+		}
+	}
+}
 
-@media $xsmall
-	.footer
+@media $xsmall {
+	.footer {
 		-ms-flex-align: center;
 		align-items: center;
 		-ms-flex-pack: center;
@@ -45,11 +50,15 @@
 		flex-direction: column;
 		text-align: center;
 
-		&__links
+		&__links {
 			-ms-flex-pack: center;
 			justify-content: center;
 			width: 100%;
 			margin-top: 8px;
+		}
 
-		&__link
+		&__link {
 			margin: 0 9px;
+		}
+	}
+}

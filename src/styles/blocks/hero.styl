@@ -1,4 +1,4 @@
-.hero
+.hero {
 	position: relative;
 	display: flex;
 	-ms-flex-align: end;
@@ -15,10 +15,11 @@
 	border: 1px solid rgba(155, 200, 232, 0.18);
 	border-radius: 6px;
 
-	&__content
+	&__content {
 		width: 100%;
+	}
 
-	&__eyebrow
+	&__eyebrow {
 		margin: 0 0 12px;
 		color: #9bc8e8;
 		color: $c3;
@@ -27,42 +28,53 @@
 		letter-spacing: 2px;
 		line-height: 16px;
 		text-transform: uppercase;
+	}
 
-	&__title
+	&__title {
 		margin: 0;
 		font-size: 44px;
 		font-weight: 600;
 		letter-spacing: -1px;
 		line-height: 50px;
+	}
 
-	&__description
+	&__description {
 		max-width: 640px;
 		margin: 16px 0 0;
 		color: rgba(233, 240, 247, 0.9);
 		font-size: 18px;
 		line-height: 29px;
+	}
+}
 
-@media $medium
-	.hero
+@media $medium {
+	.hero {
 		min-height: 340px;
 		padding: 40px;
 
-		&__title
+		&__title {
 			font-size: 38px;
 			line-height: 44px;
+		}
+	}
+}
 
-@media $xsmall
-	.hero
+@media $xsmall {
+	.hero {
 		min-height: 320px;
 		padding: 24px;
 		background-image: linear-gradient(0deg, rgba(10, 18, 25, 0.94) 0%, rgba(10, 18, 25, 0.16) 100%), url('../assets/social-banner.png');
 		background-position: center;
 
-		&__title
+		&__title {
 			font-size: 30px;
 			letter-spacing: -1px;
 			line-height: 36px;
+		}
 
-		&__description
+		&__description {
 			font-size: 16px;
 			line-height: 24px;
+		}
+	}
+}

@@ -4,19 +4,19 @@ import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { series, watch } from "gulp";
+import { build as bundleJavaScript } from "esbuild";
 import stylus from "stylus";
 import nunjucks from "nunjucks";
-import { minify } from "terser";
 
 const root = path.dirname(fileURLToPath(import.meta.url));
 const source = path.join(root, "src");
 const output = path.join(root, "build");
-const modules = ["js/settings.js", "js/utils/dom.js", "js/app/example-module.js", "js/app.js"];
 
 const templateEnvironment = new nunjucks.Environment(
 	new nunjucks.FileSystemLoader(source, { noCache: true }),
 	{ autoescape: true, throwOnUndefined: true },
 );
+templateEnvironment.addFilter("padNumber", (value) => String(value).padStart(2, "0"));
 async function clean() {
 	fs.rmSync(output, { recursive: true, force: true });
 }
@@ -42,7 +42,7 @@ async function compile() {
 		const pageData = fs.existsSync(pageDataPath)
 			? JSON.parse(fs.readFileSync(pageDataPath, "utf8"))
 			: {};
-		const context = { ...siteData, ...pageData };
+		const context = { ...siteData, ...pageData, currentYear: new Date().getFullYear() };
 		const templateName = path.relative(source, templatePath).split(path.sep).join("/");
 		const html = templateEnvironment.render(templateName, context);
 		const relativeOutput = relativeTemplate.replace(/\.njk$/, ".html");
@@ -70,24 +70,20 @@ async function compile() {
 	const minifiedStylesheet = await renderStylesheet(true);
 	fs.writeFileSync(path.join(output, "css/style.min.css"), minifiedStylesheet);
 
-	const script = modules
-		.map((file) => "\n/* " + file + " */\n" + fs.readFileSync(path.join(source, file), "utf8"))
-		.join("\n");
-	fs.writeFileSync(path.join(output, "js/app.js"), script);
-
-	const bundle = await minify(script, {
-		compress: true,
-		mangle: true,
-		format: { comments: false },
+	// Bundle imported modules as a classic script so build/index.html works via file://.
+	await bundleJavaScript({
+		entryPoints: [path.join(source, "js/app.js")],
+		outfile: path.join(output, "js/app.js"),
+		bundle: true,
+		format: "iife",
+		platform: "browser",
+		target: "es2018",
 	});
-	fs.writeFileSync(path.join(output, "js/app.min.js"), bundle.code);
 
 	for (const folder of ["assets", "fonts"]) {
 		const from = path.join(source, folder);
 		if (fs.existsSync(from)) fs.cpSync(from, path.join(output, folder), { recursive: true });
 	}
-	const favicon = path.join(source, "favicon.svg");
-	if (fs.existsSync(favicon)) fs.copyFileSync(favicon, path.join(output, "favicon.svg"));
 }
 
 export const build = series(clean, compile);
@@ -155,6 +151,7 @@ async function serveBuild() {
 		".jpg": "image/jpeg",
 		".jpeg": "image/jpeg",
 		".png": "image/png",
+		".mp4": "video/mp4",
 		".svg": "image/svg+xml",
 		".webp": "image/webp",
 		".woff": "font/woff",

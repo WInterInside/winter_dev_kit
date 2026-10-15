@@ -1,7 +1,7 @@
 {
 	"insertColons": true,
 	"insertSemicolons": true,
-	"insertBraces": false,
+	"insertBraces": true,
 	"insertNewLineAroundImports": true,
 	"insertNewLineAroundBlocks": true,
 	"insertSpaceAfterComma": true,

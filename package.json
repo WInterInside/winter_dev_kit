@@ -2,21 +2,22 @@
 	"name": "winter-dev-pack",
 	"version": "1.0.0",
 	"private": true,
+	"type": "module",
 	"description": "Стартовый веб-проект с Gulp, Stylus, Nunjucks и модулями JavaScript",
 	"scripts": {
 		"start": "gulp start",
 		"build": "gulp build",
 		"postinstall": "npm run build",
-		"format": "prettier --write \"src/**/*.{js,njk,json,md}\" gulpfile.mjs README.md package.json .prettierrc.json .stylusrc.json .vscode/settings.json .vscode/extensions.json && stylus-supremacy format \"src/styles/**/*.styl\" --replace --options .stylusrc.json"
+		"format": "prettier --write \"src/**/*.{js,njk,json,md}\" gulpfile.mjs README.md package.json .prettierrc.json .stylusrc.json && stylus-supremacy format \"src/styles/**/*.styl\" --replace --options .stylusrc.json"
 	},
 	"devDependencies": {
+		"esbuild": "^0.28.2",
 		"gulp": "5.0.1",
 		"gulp-cli": "3.1.0",
 		"nunjucks": "^3.2.4",
 		"prettier": "3.5.3",
 		"prettier-plugin-jinja-template": "^2.2.0",
 		"stylus": "^0.64.0",
-		"stylus-supremacy": "4.0.0",
-		"terser": "5.48.0"
+		"stylus-supremacy": "4.0.0"
 	}
 }

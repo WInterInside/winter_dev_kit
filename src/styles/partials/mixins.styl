@@ -1,92 +1,113 @@
 // font-face
-webfont($family, $file, $weight = normal, $style = normal)
-	@font-face
+webfont($family, $file, $weight = normal, $style = normal) {
+	@font-face {
 		font-family: $family;
 		src: url('../fonts/' + $file + '.eot');
 		src: url('../fonts/' + $file + '.eot?#iefix') format('embedded-opentype'), url('../fonts/' + $file + '.woff') format('woff'), url('../fonts/' + $file + '.ttf') format('truetype'), url('../fonts/' + $file + '.svg') format('svg');
 		font-weight: $weight;
 		font-style: $style;
 		font-display: block;
+	}
+}
 
 // placeholder color
-placeholder($c)
-	&::-webkit-input-placeholder
+placeholder($c) {
+	&::-webkit-input-placeholder {
 		color: $c;
+	}
 
-	&::-moz-placeholder
+	&::-moz-placeholder {
 		color: $c;
 		opacity: 1;
+	}
 
-	&:-moz-placeholder
+	&:-moz-placeholder {
 		color: $c;
 		opacity: 1;
+	}
 
-	&:-ms-input-placeholder
+	&:-ms-input-placeholder {
 		color: $c;
+	}
+}
 
 // clearfix
-clearfix()
-	&:before, &:after
+clearfix() {
+	&:before, &:after {
 		display: block;
 		content: '';
 		height: 0;
 		overflow: hidden;
 		clear: both;
+	}
+}
 
-verticalStretch()
+verticalStretch() {
 	display: flex;
 	flex-flow: column nowrap;
 	flex-grow: 1;
+}
 
 // scrollbar
-scrollbar($thumb = $c3, $track = transparent, $width = 2px)
+scrollbar($thumb = $c3, $track = transparent, $width = 2px) {
 	scrollbar-width: thin;
 	scrollbar-color: $thumb $track;
 
-	&::-webkit-scrollbar
+	&::-webkit-scrollbar {
 		width: $width;
 		height: $width;
 		border-radius: $width;
+	}
 
-	&::-webkit-scrollbar-track
+	&::-webkit-scrollbar-track {
 		background: $track;
 		border-radius: $width;
+	}
 
-	&::-webkit-scrollbar-thumb
+	&::-webkit-scrollbar-thumb {
 		background-color: $thumb;
 		border-radius: $width;
+	}
+}
 
-scrollbarClear()
+scrollbarClear() {
 	scrollbar-width: thin;
 	scrollbar-color: transparent transparent;
 
-	&::-webkit-scrollbar
+	&::-webkit-scrollbar {
 		width: 0px;
 		height: 0px;
 		border-radius: 0px;
+	}
 
-	&::-webkit-scrollbar-track
+	&::-webkit-scrollbar-track {
 		background: transparent;
+	}
 
-	&::-webkit-scrollbar-thumb
+	&::-webkit-scrollbar-thumb {
 		background-color: transparent;
 		border-radius: 0px;
+	}
+}
 
-pseudo()
+pseudo() {
 	display: block;
 	position: absolute;
 	content: '';
+}
 
-flexCenter()
+flexCenter() {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
 
-blockScrollUnderPopup()
+blockScrollUnderPopup() {
 	height: 100vh;
 	overflow-y: hidden;
+}
 
-overlay()
+overlay() {
 	position: fixed;
 	inset: 0;
 	flexCenter();
@@ -97,7 +118,9 @@ overlay()
 	opacity: 0;
 	pointer-events: none;
 	transition: background $duration, opacity $duration;
+}
 
-showItem()
+showItem() {
 	opacity: 1;
 	pointer-events: auto;
+}

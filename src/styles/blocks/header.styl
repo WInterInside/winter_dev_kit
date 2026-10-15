@@ -1,4 +1,4 @@
-.header
+.header {
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-align: center;
@@ -8,7 +8,7 @@
 	min-height: 56px;
 	border-bottom: 1px solid rgba(155, 200, 232, 0.18);
 
-	&__brand
+	&__brand {
 		color: #91a2b2;
 		color: $c5;
 		font-size: 13px;
@@ -18,14 +18,20 @@
 		text-decoration: none;
 		transition: color $duration;
 
-		&:hover
+		&:hover {
 			color: #9bc8e8;
 			color: $c3;
+		}
+	}
 
-	&__navigation
+	&__navigation {
 		display: -ms-flexbox;
 		display: flex;
+	}
+}
 
-@media $xsmall
-	.header
+@media $xsmall {
+	.header {
 		min-height: 48px;
+	}
+}

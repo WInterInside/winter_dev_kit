@@ -1,13 +1,15 @@
-"use strict";
+import { initExampleModule } from "./app/example-module.js";
+import { initTabs } from "./modules/tabs.js";
+import { initReveal } from "./modules/reveal.js";
 
-class App {
-	constructor() {
-		this.exampleModule = new ExampleModule();
-	}
+const initApp = () => {
+	initExampleModule();
+	initTabs();
+	initReveal();
+};
 
-	start() {
-		this.exampleModule.init();
-	}
+if (document.readyState === "loading") {
+	document.addEventListener("DOMContentLoaded", initApp, { once: true });
+} else {
+	initApp();
 }
-
-new App().start();
