@@ -3,7 +3,7 @@ import http from "node:http";
 import path from "node:path";
 import { spawn } from "node:child_process";
 import { fileURLToPath } from "node:url";
-import { series, watch } from "gulp";
+import chokidar from "chokidar";
 import { build as bundleJavaScript } from "esbuild";
 import stylus from "stylus";
 import nunjucks from "nunjucks";
@@ -86,12 +86,9 @@ async function compile() {
 	}
 }
 
-export const build = series(clean, compile);
-
-function runTask(task) {
-	return new Promise((resolve, reject) => {
-		task((error) => (error ? reject(error) : resolve()));
-	});
+export async function build() {
+	await clean();
+	await compile();
 }
 
 function openBrowser(url) {
@@ -251,7 +248,7 @@ async function serveBuild() {
 		try {
 			do {
 				rebuildRequested = false;
-				await runTask(build);
+				await build();
 			} while (rebuildRequested);
 
 			for (const client of clients) client.write("data: reload\n\n");
@@ -262,11 +259,22 @@ async function serveBuild() {
 			rebuildInProgress = false;
 		}
 	}
-	const watcher = watch("src/**/*", { ignoreInitial: true }, rebuildAndReload);
+	const watcher = chokidar.watch(source, { ignoreInitial: true });
+	watcher.on("all", rebuildAndReload);
 	watcher.on("error", (error) => console.error("Ошибка отслеживания файлов:", error));
 }
 
 export async function start() {
-	await runTask(build);
+	await build();
 	await serveBuild();
+}
+
+const command = process.argv[2];
+if (command === "build") {
+	await build();
+} else if (command === "start") {
+	await start();
+} else {
+	console.error("Использование: node site.mjs build|start");
+	process.exitCode = 1;
 }

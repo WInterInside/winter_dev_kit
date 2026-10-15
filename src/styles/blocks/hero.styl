@@ -8,7 +8,15 @@
 	padding: 56px;
 	background-color: #17232e;
 	background-color: $c17;
-	background-image: linear-gradient(90deg, rgba(10, 18, 25, 0.9) 0%, rgba(10, 18, 25, 0.64) 46%, rgba(10, 18, 25, 0.08) 100%), linear-gradient(0deg, rgba(10, 18, 25, 0.58) 0%, transparent 55%), url('../assets/social-banner.png');
+	background-image:
+		linear-gradient(
+			90deg,
+			rgba(10, 18, 25, 0.9) 0%,
+			rgba(10, 18, 25, 0.64) 46%,
+			rgba(10, 18, 25, 0.08) 100%
+		),
+		linear-gradient(0deg, rgba(10, 18, 25, 0.58) 0%, transparent 55%),
+		url("../assets/social-banner.png");
 	background-position: center 52%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -63,7 +71,9 @@
 	.hero {
 		min-height: 320px;
 		padding: 24px;
-		background-image: linear-gradient(0deg, rgba(10, 18, 25, 0.94) 0%, rgba(10, 18, 25, 0.16) 100%), url('../assets/social-banner.png');
+		background-image:
+			linear-gradient(0deg, rgba(10, 18, 25, 0.94) 0%, rgba(10, 18, 25, 0.16) 100%),
+			url("../assets/social-banner.png");
 		background-position: center;
 
 		&__title {
